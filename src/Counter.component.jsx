@@ -13,8 +13,8 @@ export default class Counter extends Component{
         this.setState({counter:this.state.counter=5})
     }
     plusOne(){
-        if ({counter:this.state.counter}%7===0) {
-            return <h1>BOOM!</h1>
+        if (this.state.counter%7==0) {
+            <h1>BOOM!</h1>
         }
         this.setState({counter:this.state.counter+1})
     }
