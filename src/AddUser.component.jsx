@@ -51,27 +51,24 @@ export default class AddUser extends Component{
     }
     chackIfPasswordsAreTheSame(e){
         if (this.state.Password===this.state.ConfirmPassword) {
-            alert("The form has been sent")
             this.printUserInfoToTable(e)
+            alert("The form has been sent")
         }
         else{
-            // document.getElementById("F_name").innerText=""
-            // document.getElementById("L_name").innerText=""
-            // document.getElementById("Age").innerText=""
-            // document.getElementById("Email").innerText=""
-            // document.getElementById("Password").innerText=""
-            // document.getElementById("ConfrimPassword").innerText=""
+            e.preventDefault(e)
             alert("Chack if passwords are the same")
         }
     }
-    // chackIfPasswordsAreTheSameInLive(){
-    //     if (this.state.Password!==this.state.ConfirmPassword) {
-    //         // document.getElementById("ErroMassege").style.color="color"
-    //         // document.getElementById("ErroMassege").innerHTML=`password are not the same`
-    //         alert("pass")
-    //     }
-        
-    // }
+    chackIfPasswordsAreTheSameInLive(){
+        if (this.state.Password!==this.state.ConfirmPassword) {
+             document.getElementById("ErroMassege").style.color="green" 
+             document.getElementById("ErroMassege").innerText=`password are not the same`
+        }
+        // else{
+        //     document.getElementById("ErroMassege").style.color="red" 
+        //     document.getElementById("ErroMassege").innerText=`password are not the same`
+        // }
+    }
     render(){
         return(
             <div>
@@ -93,7 +90,7 @@ export default class AddUser extends Component{
                 <br />
                 <span id="ErroMassege"></span>
                 <label htmlFor="ConfirmPassword">Confrim Password:</label>
-                <input id="ConfirmPassword" type="text" value={this.state.ConfirmPassword} onChange={(e)=>this.getConfrimPassword(e)} />
+                <input id="ConfirmPassword" type="text" value={this.state.ConfirmPassword}  onChange={(e)=>this.getConfrimPassword(e)} onKeyDown={this.chackIfPasswordsAreTheSameInLive()}/>
                 <div id="UserTable"></div>
                 <button>click to submit</button>
                 </form> 
