@@ -61,13 +61,13 @@ export default class AddUser extends Component{
     }
     chackIfPasswordsAreTheSameInLive(){
         if (this.state.Password!==this.state.ConfirmPassword) {
-             document.getElementById("ErroMassege").style.color="green" 
+             document.getElementById("ErroMassege").style.color="red" 
              document.getElementById("ErroMassege").innerText=`password are not the same`
         }
-        // else{
-        //     document.getElementById("ErroMassege").style.color="red" 
-        //     document.getElementById("ErroMassege").innerText=`password are not the same`
-        // }
+        else{
+            document.getElementById("ErroMassege").style.color="green" 
+            document.getElementById("ErroMassege").innerText=`password are the same`
+        }
     }
     render(){
         return(
