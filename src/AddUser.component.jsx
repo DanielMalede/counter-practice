@@ -90,7 +90,7 @@ export default class AddUser extends Component{
                 <br />
                 <span id="ErroMassege"></span>
                 <label htmlFor="ConfirmPassword">Confrim Password:</label>
-                <input id="ConfirmPassword" type="text" value={this.state.ConfirmPassword}  onChange={(e)=>this.getConfrimPassword(e)} onKeyDown={this.chackIfPasswordsAreTheSameInLive()}/>
+                <input id="ConfirmPassword" type="text" value={this.state.ConfirmPassword}  onChange={(e)=>this.getConfrimPassword(e)} />
                 <div id="UserTable"></div>
                 <button>click to submit</button>
                 </form> 

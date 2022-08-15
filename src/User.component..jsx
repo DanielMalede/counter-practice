@@ -1,9 +1,9 @@
 import { Component } from "react";
 
 export default class User extends Component {
-  constructor() {
+  constructor(props) {
     super();
-    this.state = { F_name: "NO NAME", L_name:"", Age:"", Email:"", Password:""};
+    this.state = { F_name:props, L_name:props, Age:props, Email:props, Password:props};
 
   }
   printMyName() {
